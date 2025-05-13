@@ -1,0 +1,5 @@
+<li class="list-group-item">
+    <p><%= user.name %>(<%= user.user_type %>)</p>
+    <a class="btn btn-success <%= user.user_type == "admin" ? "disabled" : "" %>" <%= user.user_type == "admin" ? "disabled" : "" %> href="/promote?name=<%= user.name %>">Promote to Admin</a>
+    <a class="btn btn-danger <%= user.user_type == "user" ? "disabled" : "" %>" <%= user.user_type == "user" ? "disabled" : "" %> href="/demote?name=<%= user.name %>">Demote to User</a>
+</li>

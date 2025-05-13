@@ -1,0 +1,17 @@
+<%- include("templates/header") %>
+<div class="container p-4">
+    <h1>Hello, <%= String(name).charAt(0).toUpperCase() + String(name).slice(1) %>.</h1>
+    <div class="container">
+        <div class="row">
+        <% let i=0; %>
+        <% let frogs = [{src: "p/butterflyfrog.jpg", alt: "a frog with a butterfly"}, {src: "p/relaxedfrog.jpg", alt: "a frog that's relaxed"}, {src: "p/tinyfrog.jpg", alt: "a frog that's tiny"}]; %>
+        <% for(i = 0; i < 3; i++) { %>
+            <div class="col-md card m-3 ms-0 p-3">
+                <%- include('templates/img', {src: frogs[i].src, alt: frogs[i].alt}) %>
+            </div>
+        <% } %>
+        </div>
+    </div>
+    <a class="btn btn-outline-dark" href="/logout">Sign out</a>
+</div>
+<%- include("templates/footer") %>
